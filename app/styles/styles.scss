@@ -1,13 +1,2 @@
-.main-container{
-  display: grid;
-  grid-template-columns: 20% auto;
-
-  .side-nav {
-    border-right: 1px black;
-  }
-}
-.is-complete {
-  opacity: 0.6;
-  text-decoration: line-through;
-  background: #d1d1d1;
-}
+@import "variables";
+@import "_side-nav";

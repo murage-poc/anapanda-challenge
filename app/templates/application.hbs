@@ -1,12 +1,14 @@
-<div class="main-container">
-  <div class="side-nav">
-    <SideNav />
-  </div>
+<div class="container-fluid">
+    <!--PAGE CONTENT-->
+    <div class="row">
+        <div class="col-2 aside-menu">
+            <SideNav/>
+        </div>
+        <!--CONTENT SIDE-->
+        <div class="col-10 content-wrapper">
 
-  <div class="row justify-content-md-center">
-    <div class="col-md-6">
-      {{outlet}}
+            {{outlet}}
 
+        </div>
     </div>
-  </div>
 </div>
