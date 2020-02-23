@@ -3,13 +3,8 @@
         <!--left content details-->
         <div class="d-flex flex-row">
             <!--checkbox-->
-            <div class="select-task">
-                <label>
-                    <input type="checkbox" checked="{{if @task.isComplete 'checked'}}"
-                        {{on 'click' (fn this.toggleTaskStatus @task) }}>
-                    <span class="custom-check-mark"></span>
-                </label>
-            </div>
+            {{toggle-done onSelect= (fn this.toggleTaskStatus @task) checked=@task.isComplete }}
+
             <div class="task-details d-flex flex-column">
                 <p class="task-title">
                     {{@task.name}}
