@@ -7,7 +7,7 @@ export default class IndexController extends Controller {
     @tracked showAllTasks = true;
 
     /**
-     * will toggle what "tab" to show
+     * Toggles "tab" to show either all tasks or just completed tasks
      * @param id
      */
     @action
@@ -16,24 +16,12 @@ export default class IndexController extends Controller {
         this.showCompletedTasks = (id === 1);
     }
 
-
-    /**
-     * Pin/Unpin a task
-     * @param task
-     * @returns {boolean}
-     */
-    @action
-    toggleTaskPinStatus(task) {
-
-        task.isPinned = !task.isPinned;
-    }
-
     /**
      * filter the Task model to return only completed tasks
      * @returns {*}
      */
     get completedTasks() {
-        return this.model.filter((task) => task.isComplete);
+        return this.model.filterBy('isComplete',true);
     }
 
     /**
@@ -41,8 +29,9 @@ export default class IndexController extends Controller {
      * @returns {*}
      */
     get inCompleteTasks() {
-        return this.model.filter((task) => !task.isComplete);
+        return this.model.filterBy('isComplete',false);
     }
+
 
 
 }

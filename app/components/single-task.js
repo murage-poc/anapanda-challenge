@@ -6,11 +6,12 @@ export default class SingleTaskComponent extends Component {
     @action
     toggleTaskStatus(task) {
         //delay for user to click undo (an animation will be shown)
-            task.isComplete = !task.isComplete;
+        task.isComplete = !task.isComplete;
+        task.setProperties({isPinned:false})
     }
 
     togglePinStatus(task) {
-        task.isPinned = !task.isPinned;
+        task.toggleProperty('isPinned')
     }
 
 
