@@ -5,12 +5,16 @@
     </div>
     <nav class="navbar side-menu">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+
+            <LinkTo @route="index"
+                    @tagName="li"
+                    @classNames="nav-item">
                 <a href="#" class="nav-link">
-                    <span class="icon checked"></span>
+                    <span class="icon tasks"></span>
                     My Tasks
                 </a>
-            </li>
+            </LinkTo>
+
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <span class="icon tasks"></span>
