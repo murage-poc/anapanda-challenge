@@ -1,0 +1,35 @@
+.content-wrapper {
+
+  // MAIN CONTENT
+  .main-content {
+    padding-left: 30px;
+    padding-right: 40px;
+
+    .section-title {
+      font-family: inter-semi-bold, sans-serif;
+      padding-left: 48px;
+      padding-right: 13px;
+      font-size: 14px;
+      height: 32px;
+      line-height: 2.1em;
+      letter-spacing: 0;
+      color: $section-title-color;
+    }
+  }
+}
+
+/**
+  RESPONSIVENESS
+ */
+@media (min-width: 768px) {
+  .content-wrapper {
+    .main-content {
+      .navbar {
+        .nav-link {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

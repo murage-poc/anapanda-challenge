@@ -1,0 +1,122 @@
+/*
+  GENERAL TASK
+ */
+.task {
+  height: 64px;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-color: transparent;
+  border-top-color: $task-card-border-color;
+
+  &:last-of-type {
+    border-bottom-color: $task-card-border-color;
+  }
+
+  &:hover {
+    background-color: $task-card-hover-background-color;
+  }
+
+  .select-task {
+    transform: translate(35%, 35%);
+  }
+
+  .task-details {
+    padding-top: 14px;
+
+    .task-title {
+      font-family: inter-medium, sans-serif;
+      font-size: 16px;
+      color: $task-title-color;
+      margin-bottom: 0;
+    }
+
+    .task-description {
+      font-family: inter-regular, sans-serif;
+      font-size: 14px;
+      margin-bottom: 0;
+      padding-bottom: 12px;
+      color: $task-description-color;
+    }
+  }
+
+  .task-action {
+    font-size: 12px;
+    cursor: pointer;
+
+    .pin-task-btn {
+      border-radius: 5px;
+      background-color: $btn-pin-background-color;
+      width: 22px;
+      height: 22px;
+      margin: auto 16px;
+      background-image: url("/assets/images/icons/marker.svg");
+      background-repeat: no-repeat;
+      text-align: center;
+      background-position: center;
+    }
+
+    .complete-task-btn, .task-completed {
+      border-radius: 5px;
+      margin: auto 16px;
+      padding: 2px;
+      line-height: 1rem;
+      width: 50px;
+      height: 20px;
+      text-align: center;
+      background-color: $btn-done-background-color;
+    }
+
+    .task-completed {
+      width: 64px;
+      background-color: $btn-complete-background-color;
+      color: $btn-complete-color;
+    }
+  }
+}
+
+/*
+  PINNED TASK
+ */
+.pinned-tasks-title {
+  font-family: inter-semi-bold, sans-serif;
+  border-top: solid 1px $task-card-border-color;
+  font-size: 14px;
+  padding-left: 50px;
+  padding-top: 18px;
+  padding-bottom: 5px;
+  letter-spacing: 0;
+  color: $section-title-color;
+}
+
+.pinned-task-list {
+  margin-bottom: 28px;
+
+  .task {
+    background-color: $pinned-task-card-background-color;
+
+    .pin-task-btn {
+      border: none;
+      background-image: url("/assets/images/icons/marker-active.svg");
+    }
+  }
+}
+
+/**
+  WHEN THERE ARE NO TASKS
+ */
+.no-task-card {
+  text-align: center;
+  width: 100%;
+  margin-top: 10%;
+  margin-left: -5%;
+
+  .img-container {
+    display: inline-block;
+  }
+
+  .no-task-msg {
+    display: inline-block;
+  }
+}
+

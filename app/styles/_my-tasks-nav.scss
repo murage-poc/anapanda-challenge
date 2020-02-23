@@ -1,0 +1,42 @@
+.content-wrapper {
+// TOP NAV
+  .navbar {
+    background-color: $top-nav-background-color;
+    padding-right: 31px;
+    padding-left: 17px;
+    padding-bottom: 0;
+
+    .nav-item {
+      padding: 21px 11px 18px 11px;
+
+      .nav-link {
+        font-family: inter-semi-bold, sans-serif;
+        padding-bottom: 5px;
+        color: $top-nav-link-color;
+        font-size: 18px;
+        line-height: 1.3em;
+      }
+
+      &.active {
+        .nav-link {
+          border-bottom: solid 2px $active-top-nav-link-border-color;
+          color: $active-top-nav-link-color;
+          background-color: $active-top-nav-link-background-color;
+        }
+      }
+    }
+
+    .navbar-nav.mr-auto {
+      .nav-item {
+        padding-top: 32px;
+      }
+    }
+
+    .user-img-container {
+      height: 36px;
+      width: 36px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

@@ -1,2 +1,18 @@
 @import "variables";
 @import "_side-nav";
+
+a {
+  color: inherit
+}
+
+.content-wrapper {
+  height: 100vh;
+  padding-right: 32px;
+  background-color: $main-content-background-color;
+}
+
+
+@import "my-tasks-nav";
+@import "content";
+@import "task";
+@import "checkbox";

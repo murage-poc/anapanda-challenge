@@ -1,20 +1,35 @@
-<li class="list-group-item {{if @task.isComplete "is-complete"}}">
-  <div class="d-flex">
-    <h5 class="card-title flex-fill">
-      {{@task.name}}
-    </h5>
-    <div class="toggle-done ml-auto">
-      <div class="btn-group btn-group-sm" role="group">
-        <BsButton @type="secondary">Pin</BsButton>
-        {{#if @task.isComplete}}
-          <BsButton @type="primary" onClick={{action (mut @task.isComplete) false}}>Undo</BsButton>
-        {{else}}
-          <BsButton @type="primary" onClick={{action (mut @task.isComplete) true}}>Done</BsButton>
-        {{/if}}
-      </div>
+<div class="card task">
+    <div class="d-flex flex-row justify-content-between">
+        <!--left content details-->
+        <div class="d-flex flex-row">
+            <!--checkbox-->
+            <div class="select-task">
+                <label>
+                    <input type="checkbox" checked="{{if @task.isComplete 'checked'}}"
+                        {{on 'click' (fn this.toggleTaskStatus @task) }}>
+                    <span class="custom-check-mark"></span>
+                </label>
+            </div>
+            <div class="task-details d-flex flex-column">
+                <p class="task-title">
+                    {{@task.name}}
+                </p>
+                <p class="task-description">
+                    {{@task.description}}
+                </p>
+            </div>
+        </div>
+        <!--right content (action buttons)-->
+        <div class="d-flex flex-row task-action">
+
+            <div class="pin-task-btn" {{on 'click' (fn this.togglePinStatus @task)}}></div>
+
+            {{#if @task.isComplete}}
+                <div class="task-completed"  {{on 'click' (fn this.toggleTaskStatus @task)}}>Complete</div>
+            {{else}}
+                <div class="complete-task-btn"  {{on 'click' (fn this.toggleTaskStatus @task)}}>Done</div>
+
+            {{/if}}
+        </div>
     </div>
-  </div>
-  <div class="task-description">
-    {{@task.description}}
-  </div>
-</li>
+</div>
