@@ -12,15 +12,14 @@ module('Integration | Component | side-nav', function(hooks) {
 
     await render(hbs`<SideNav />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.notStrictEqual(this.element.textContent.trim(), 'My Tasks Projects Calendar');
 
     // Template block usage:
     await render(hbs`
       <SideNav>
-        template block text
       </SideNav>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+      assert.notStrictEqual(this.element.textContent.trim(), 'My Tasks Projects Calendar');
   });
 });

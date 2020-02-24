@@ -12,15 +12,14 @@ module('Integration | Component | single-task', function(hooks) {
 
     await render(hbs`<SingleTask />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), 'Done');
 
     // Template block usage:
     await render(hbs`
       <SingleTask>
-        template block text
       </SingleTask>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'Done');
   });
 });

@@ -16,11 +16,10 @@ module('Integration | Component | empty-task-list', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      <EmptyTaskList>
-        template block text
+      <EmptyTaskList @message="no content provided">
       </EmptyTaskList>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'no content provided');
   });
 });

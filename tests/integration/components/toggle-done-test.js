@@ -17,10 +17,9 @@ module('Integration | Component | toggle-done', function(hooks) {
     // Template block usage:
     await render(hbs`
       <ToggleDone>
-        template block text
       </ToggleDone>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '');
   });
 });
