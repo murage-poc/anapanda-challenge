@@ -16,14 +16,22 @@
         font-size: 18px;
         line-height: 1.3em;
       }
-
+      .badge{
+        color: $badge-color;
+        background-color: $badge-background-color;
+      }
       &.active {
         .nav-link {
           border-bottom: solid 2px $active-top-nav-link-border-color;
           color: $active-top-nav-link-color;
           background-color: $active-top-nav-link-background-color;
         }
+        .badge{
+          color: $active-badge-color;
+          background-color: $active-badge-background-color;
+        }
       }
+      
     }
 
     .navbar-nav.mr-auto {

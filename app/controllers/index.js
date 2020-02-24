@@ -21,7 +21,7 @@ export default class IndexController extends Controller {
      * @returns {*}
      */
     get completedTasks() {
-        return this.model.filterBy('isComplete',true);
+        return this.model.filterBy('isComplete', true);
     }
 
     /**
@@ -29,9 +29,11 @@ export default class IndexController extends Controller {
      * @returns {*}
      */
     get inCompleteTasks() {
-        return this.model.filterBy('isComplete',false);
+        return this.model.filterBy('isComplete', false);
     }
 
-
+    get completedTasksTotal() {
+        return this.completedTasks.length;
+    }
 
 }
