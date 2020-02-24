@@ -1,30 +1,27 @@
 <div class="card task">
-    <div class="d-flex flex-row justify-content-between">
-        <!--left content details-->
-        <div class="d-flex flex-row">
-            <!--checkbox-->
-            {{toggle-done onSelect= (fn this.toggleTaskStatus @task) checked=@task.isComplete }}
+  <div class="d-flex flex-row justify-content-between">
+    <div class="d-flex flex-row">
+      {{toggle-done onSelect= (fn this.toggleTaskStatus @task) checked=@task.isComplete }}
 
-            <div class="task-details d-flex flex-column">
-                <p class="task-title">
-                    {{@task.name}}
-                </p>
-                <p class="task-description">
-                    {{@task.description}}
-                </p>
-            </div>
-        </div>
-        <!--right content (action buttons)-->
-        <div class="d-flex flex-row task-action">
-
-            <div class="pin-task-btn" {{on 'click' (fn this.togglePinStatus @task)}}></div>
-
-            {{#if @task.isComplete}}
-                <div class="task-completed"  {{on 'click' (fn this.toggleTaskStatus @task)}}>Undo</div>
-            {{else}}
-                <div class="complete-task-btn"  {{on 'click' (fn this.toggleTaskStatus @task)}}>Done</div>
-
-            {{/if}}
-        </div>
+      <div class="task-details d-flex flex-column">
+        <p class="task-title">
+          {{@task.name}}
+        </p>
+        <p class="task-description">
+          {{@task.description}}
+        </p>
+      </div>
     </div>
+    <div class="d-flex flex-row task-action">
+
+      <div class="pin-task-btn" {{on "click" (fn this.togglePinStatus @task)}}></div>
+
+      {{#if @task.isComplete}}
+        <div class="task-completed"  {{on "click" (fn this.toggleTaskStatus @task)}}>Undo</div>
+      {{else}}
+        <div class="complete-task-btn"  {{on "click" (fn this.toggleTaskStatus @task)}}>Done</div>
+
+      {{/if}}
+    </div>
+  </div>
 </div>
