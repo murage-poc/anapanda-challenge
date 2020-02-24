@@ -1,7 +1,7 @@
 <div class="select-task">
-    <label>
-        <input type="checkbox" checked="{{if @checked 'checked'}}"
-            {{on 'click' (fn @onSelect) }}>
-        <span class="custom-check-mark"></span>
-    </label>
+  <label>
+    <input type="checkbox" checked={{if @checked "checked"}}
+      {{on "click" (fn @onSelect) }}>
+    <span class="custom-check-mark"></span>
+  </label>
 </div>

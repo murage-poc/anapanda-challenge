@@ -1,46 +1,45 @@
-<TasksNavTabs @toggleTabView={{this.showTab}} 
-            @completedTasks={{this.completedTasksTotal}} 
-   @ showCompletedTasksTab={{this.showCompletedTasks }}
-    @showAllTasksTab={{this.showAllTasks}}>
+<TasksNavTabs @toggleTabView={{this.showTab}}
+              @completedTasks={{this.completedTasksTotal}}
+              @ showCompletedTasksTab={{this.showCompletedTasks }}
+              @showAllTasksTab={{this.showAllTasks}}>
 </TasksNavTabs>
-<!--Tasks Tabs-->
 <div class="main-content">
-    {{#if showAllTasks }}
+  {{#if this.showAllTasks }}
 
-        {{#if this.inCompleteTasks}}
+    {{#if this.inCompleteTasks}}
 
-            <div class="section-title d-flex flex-row justify-content-between">
-                <span class="mr-auto">Task</span>
-                <span class="ml-auto">Actions</span>
-            </div>
+      <div class="section-title d-flex flex-row justify-content-between">
+        <span class="mr-auto">Task</span>
+        <span class="ml-auto">Actions</span>
+      </div>
 
-            {{task-list tasks=this.inCompleteTasks}}
+      {{task-list tasks=this.inCompleteTasks}}
 
-        {{else}}
+    {{else}}
 
 
-            <EmptyTaskList @message="Congrats! Looks like you have completed all tasks"/>
+      <EmptyTaskList @message="Congrats! Looks like you have completed all tasks"/>
 
-        {{/if}}
-
-    {{else if showCompletedTasks}}
-
-        {{#if this.completedTasks}}
-
-            <div class="section-title d-flex flex-row justify-content-between">
-                <span class="mr-auto">Task</span>
-                <span class="ml-auto">Actions</span>
-            </div>
-
-            {{task-list tasks=this.completedTasks}}
-
-        {{else}}
-
-            <EmptyTaskList @message="Looks like you haven't completed any task"
-                           @complete="{{true}}"></EmptyTaskList>
-
-        {{/if}}
     {{/if}}
+
+  {{else if this.showCompletedTasks}}
+
+    {{#if this.completedTasks}}
+
+      <div class="section-title d-flex flex-row justify-content-between">
+        <span class="mr-auto">Task</span>
+        <span class="ml-auto">Actions</span>
+      </div>
+
+      {{task-list tasks=this.completedTasks}}
+
+    {{else}}
+
+      <EmptyTaskList @message="Looks like you haven't completed any task"
+                     @complete={{true}}></EmptyTaskList>
+
+    {{/if}}
+  {{/if}}
 
 
 </div>

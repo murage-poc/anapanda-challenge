@@ -1,22 +1,19 @@
-{{#if pinnedTasks}}
-    <!--if has pinned tasks-->
-    <div class="pinned-tasks-title d-flex flex-row">
-        <span>Pinned Tasks</span>
-    </div>
-    <div class="d-flex flex-column pinned-task-list">
-        <!--show pinned tasks here-->
-        {{#each this.pinnedTasks  as |task|}}
-            {{single-task task=task}}
-        {{/each}}
-    </div>
+{{#if this.pinnedTasks}}
+  <div class="pinned-tasks-title d-flex flex-row">
+    <span>Pinned Tasks</span>
+  </div>
+  <div class="d-flex flex-column pinned-task-list">
+    {{#each this.pinnedTasks  as |task|}}
+      {{single-task task=task}}
+    {{/each}}
+  </div>
 {{/if}}
 
 {{#if this.unPinnedTasks}}
-    <div class="d-flex flex-column">
-        <!--show unpinned tasks-->
-        {{#each this.unPinnedTasks as |task|}}
-            {{single-task task=task}}
-        {{/each}}
+  <div class="d-flex flex-column">
+    {{#each this.unPinnedTasks as |task|}}
+      {{single-task task=task}}
+    {{/each}}
 
-    </div>
+  </div>
 {{/if}}
