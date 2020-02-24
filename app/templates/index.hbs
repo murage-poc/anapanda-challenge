@@ -1,27 +1,8 @@
-<nav class="navbar navbar-expand-md">
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item {{if showAllTasks 'active'}}">
-            <a href="#" class="nav-link" {{on 'click' (fn this.showTab 0)}}>All Tasks </a>
-        </li>
-
-        <li class="nav-item {{if showCompletedTasks  'active'}}">
-            <a href="#" class="nav-link" {{on 'click' (fn this.showTab 1)}}>Completed Tasks</a>
-        </li>
-    </ul>
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a href="#" class="nav-link user-img-container">
-                <img src="assets/images/user.png" class="img-fluid" alt="Responsive image"></a>
-        </li>
-    </ul>
-</nav>
-
-
+<TasksNavTabs @toggleTabView={{this.showTab}} 
+            @completedTasks={{this.completedTasksTotal}} 
+   @ showCompletedTasksTab={{this.showCompletedTasks }}
+    @showAllTasksTab={{this.showAllTasks}}>
+</TasksNavTabs>
 <!--Tasks Tabs-->
 <div class="main-content">
     {{#if showAllTasks }}
@@ -38,7 +19,7 @@
         {{else}}
 
 
-            <EmptyTaskList @message="Congrats! Looks like you have completed all tasks"></EmptyTaskList>
+            <EmptyTaskList @message="Congrats! Looks like you have completed all tasks"/>
 
         {{/if}}
 
