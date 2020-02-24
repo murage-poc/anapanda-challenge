@@ -20,7 +20,7 @@
             <div class="pin-task-btn" {{on 'click' (fn this.togglePinStatus @task)}}></div>
 
             {{#if @task.isComplete}}
-                <div class="task-completed"  {{on 'click' (fn this.toggleTaskStatus @task)}}>Complete</div>
+                <div class="task-completed"  {{on 'click' (fn this.toggleTaskStatus @task)}}>Undo</div>
             {{else}}
                 <div class="complete-task-btn"  {{on 'click' (fn this.toggleTaskStatus @task)}}>Done</div>
 
