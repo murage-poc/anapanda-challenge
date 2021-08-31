@@ -12,7 +12,7 @@ module('Integration | Component | empty-task-list', function(hooks) {
 
     await render(hbs`<EmptyTaskList />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -20,6 +20,6 @@ module('Integration | Component | empty-task-list', function(hooks) {
       </EmptyTaskList>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'no content provided');
+    assert.dom(this.element).hasText('no content provided');
   });
 });

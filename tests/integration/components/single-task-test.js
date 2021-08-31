@@ -12,7 +12,7 @@ module('Integration | Component | single-task', function(hooks) {
 
     await render(hbs`<SingleTask />`);
 
-    assert.equal(this.element.textContent.trim(), 'Done');
+    assert.dom(this.element).hasText('Done');
 
     // Template block usage:
     await render(hbs`
@@ -20,6 +20,6 @@ module('Integration | Component | single-task', function(hooks) {
       </SingleTask>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'Done');
+    assert.dom(this.element).hasText('Done');
   });
 });
