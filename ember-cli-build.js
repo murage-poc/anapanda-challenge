@@ -10,6 +10,18 @@ module.exports = function (defaults) {
     },
     fingerprint: {
       prepend: process.env.BASE_URL ?? '/',
+      extensions: [
+        'js',
+        'css',
+        'png',
+        'jpg',
+        'gif',
+        'svg',
+        'eot',
+        'ttf',
+        'woff2',
+        'woff',
+      ],
     },
   });
 
