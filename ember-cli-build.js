@@ -8,6 +8,9 @@ module.exports = function (defaults) {
       bootstrapVersion: 4,
       importBootstrapCSS: false,
     },
+    fingerprint: {
+      prepend: process.env.BASE_URL ?? '/',
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
