@@ -1,2 +1,20 @@
+@import "variables";
+@import "_fonts";
+@import "_side-nav";
 @import "ember-bootstrap/bootstrap";
-@import "./styles";
+
+a {
+  color: inherit
+}
+
+.content-wrapper {
+  height: 100vh;
+  padding-right: 32px;
+  background-color: $main-content-background-color;
+}
+
+
+@import "my-tasks-nav";
+@import "content";
+@import "task";
+@import "checkbox";
