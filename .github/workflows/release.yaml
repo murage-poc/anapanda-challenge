@@ -1,0 +1,17 @@
+on:
+  push:
+    branches:
+      - release
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on:
+      - ubuntu-latest
+    steps:
+      - name: checkout
+        uses: @checkout/v4
+
+      - name: Get latest
+        uses: |
+          echo "sha is $GITHUB_SHA and updated ref is $GITHUB_REF"
