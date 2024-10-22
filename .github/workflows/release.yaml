@@ -10,8 +10,8 @@ jobs:
       - ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4K
 
       - name: Get latest
-        uses: |
+        run: |
           echo "sha is $GITHUB_SHA and updated ref is $GITHUB_REF"
