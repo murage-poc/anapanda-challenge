@@ -10,7 +10,7 @@ jobs:
       - ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4K
+        uses: actions/checkout@v4
 
       - name: Get latest
         run: |
