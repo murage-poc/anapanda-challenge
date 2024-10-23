@@ -14,4 +14,10 @@ jobs:
 
       - name: Get latest
         run: |
-          echo "sha is $GITHUB_SHA and updated ref is $GITHUB_REF"
+          echo "sha is $GITHUB_SHA and updated ref is $GITHUB_REF with"
+
+      - name: Dump github context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
